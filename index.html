@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portofolio Mohammad Razi Zakaria, S.E. - Human Capital & Administration Specialist, administrasi hibah dan stakeholder pemerintah.">
+<style>html{color-scheme:light}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Razi Zakaria Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: berkas kerja. Kolom kiri sempit untuk label dokumen (mono), kolom kanan untuk isi. Angka KPI ditandai stabilo. */
+:root {
+  --paper: #f2f4f6;
+  --sheet: #ffffff;
+  --ink: #15233b;
+  --ink-soft: #4a5872;
+  --rule: #d5dbe3;
+  --accent: #1d4ed8;
+  --marker: #fde68a;
+  --marker-ink: #15233b;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --s1: .8125rem; --s2: .9375rem; --s3: 1.0625rem; --s4: 1.375rem; --s5: 2rem; --s6: clamp(2.5rem, 7vw, 4.75rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1522; --sheet: #151f30; --ink: #e6ebf2; --ink-soft: #a3afc2; --rule: #2a3750;
+    --accent: #8fb0ff; --marker: #6b5a17; --marker-ink: #fff6d6; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1522; --sheet: #151f30; --ink: #e6ebf2; --ink-soft: #a3afc2; --rule: #2a3750;
+  --accent: #8fb0ff; --marker: #6b5a17; --marker-ink: #fff6d6; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: var(--s3); line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.wrap { max-width: 68rem; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+.label {
+  font-family: var(--mono); font-size: var(--s1); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+mark { background: linear-gradient(transparent 55%, var(--marker) 55%); color: inherit; padding: 0 .1em; }
+
+/* Header bar */
+.top {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem;
+  padding-block: 1.25rem; border-bottom: 1px solid var(--rule);
+}
+.top nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.top nav a { color: var(--ink-soft); text-decoration: none; font-size: var(--s2); }
+.top nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { display: grid; gap: 1.75rem; padding-block: clamp(2.5rem, 7vw, 5rem) 2.5rem; }
+.hero h1 { font-size: var(--s6); font-weight: 800; letter-spacing: -.02em; }
+.hero h1 .deg { font-weight: 500; color: var(--ink-soft); font-size: .45em; letter-spacing: 0; vertical-align: .55em; margin-left: .2em; }
+.role { font-family: var(--display); font-size: var(--s4); font-weight: 500; color: var(--ink-soft); max-width: 40ch; }
+.role strong { color: var(--ink); font-weight: 700; }
+.lede { max-width: 62ch; }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; font-size: var(--s2); color: var(--ink-soft); }
+.meta span::before { content: "→ "; color: var(--accent); }
+
+/* Section scaffold */
+section { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1rem 2.5rem; padding-block: 3rem; border-top: 1px solid var(--rule); }
+section > header { display: grid; gap: .4rem; align-content: start; }
+section > header h2 { font-size: var(--s5); font-weight: 700; }
+@media (max-width: 760px) { section { grid-template-columns: minmax(0, 1fr); padding-block: 2.25rem; } }
+
+/* KPI sheet */
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.sheet-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding: .75rem 1.25rem; border-bottom: 1px solid var(--rule); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); }
+.kpi { padding: 1.25rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; display: grid; gap: .35rem; align-content: start; }
+.kpi .num { font-family: var(--display); font-weight: 800; font-size: 2.5rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.kpi .num small { font-size: .45em; font-weight: 600; color: var(--ink-soft); margin-left: .15em; }
+.kpi .what { font-size: var(--s2); }
+.kpi .note { font-family: var(--mono); font-size: var(--s1); color: var(--ink-soft); }
+.kpi .note b { background: var(--marker); color: var(--marker-ink); font-weight: 500; padding: 0 .3em; border-radius: 2px; }
+
+/* Experience */
+.jobs { display: grid; gap: 2.5rem; }
+.job { display: grid; gap: .9rem; }
+.job-head { display: grid; gap: .2rem; }
+.job-head h3 { font-size: var(--s4); font-weight: 700; }
+.org { font-weight: 600; }
+.when { font-family: var(--mono); font-size: var(--s1); color: var(--ink-soft); }
+.when.now { color: var(--accent); }
+.track { display: grid; gap: .5rem; }
+.track h4 { margin: .5rem 0 0; font-family: var(--mono); font-size: var(--s1); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+ul.points { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; max-width: 70ch; }
+ul.points li { position: relative; padding-left: 1.25rem; font-size: var(--s2); }
+ul.points li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: 1px; background: var(--ink-soft); }
+.divider { height: 1px; background: var(--rule); }
+
+/* Grant workflow */
+.flow { list-style: none; margin: 0 0 1.75rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .5rem; counter-reset: step; }
+.flow li { counter-increment: step; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: .85rem 1rem; display: grid; gap: .25rem; font-size: var(--s2); }
+.flow li::before { content: "Tahap " counter(step); font-family: var(--mono); font-size: var(--s1); color: var(--accent); }
+.flow li b { font-family: var(--display); font-size: var(--s3); }
+
+/* Education */
+.edu { display: grid; gap: 1.75rem; }
+.edu-item { display: grid; gap: .25rem; }
+.edu-item h3 { font-size: var(--s4); font-weight: 700; }
+.gpa { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: .4rem; font-size: var(--s2); }
+.gpa span b { font-family: var(--display); font-size: var(--s4); }
+
+/* Skills */
+.skills { display: grid; gap: 1.5rem; }
+.skill-row { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: .5rem 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
+.skill-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.skill-row h3 { font-size: var(--s3); font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags span { font-size: var(--s1); padding: .2rem .6rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--sheet); }
+@media (max-width: 560px) { .skill-row { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact */
+.contacts { display: grid; gap: .75rem; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding: 1rem 1.25rem; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; }
+.contact > div { display: grid; gap: .1rem; min-width: 0; }
+.contact .val { font-family: var(--display); font-size: var(--s4); font-weight: 600; user-select: all; overflow-wrap: anywhere; }
+.contact button, .contact a.btn {
+  font: 500 var(--s2) var(--body); color: var(--ink); background: transparent; cursor: pointer;
+  border: 1px solid var(--ink); border-radius: 3px; padding: .45rem .9rem; text-decoration: none;
+}
+.contact button:hover, .contact a.btn:hover { background: var(--ink); color: var(--sheet); }
+footer { padding-top: 2rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: var(--s1); font-family: var(--mono); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * { animation: rise .5s ease-out both; }
+  .hero > *:nth-child(2) { animation-delay: .06s; }
+  .hero > *:nth-child(3) { animation-delay: .12s; }
+  .hero > *:nth-child(4) { animation-delay: .18s; }
+  @keyframes rise { from { transform: translateY(8px); } to { transform: none; } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="label">Portofolio · Mohammad Razi Zakaria</span>
+    <nav aria-label="Navigasi bagian">
+      <a href="#capaian">Capaian</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#hibah">Hibah</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <h1>Mohammad Razi Zakaria<span class="deg">S.E.</span></h1>
+    <p class="role"><strong>Human Capital &amp; Administration Specialist.</strong> Administrasi hibah dan koordinasi stakeholder pemerintah.</p>
+    <p class="lede">Sejak 2022 saya bekerja di PT Inovasi Sistem Teknologi (INSIST) dan memegang dua fungsi sekaligus: siklus HR dari rekrutmen sampai evaluasi KPI, serta administrasi sales, tender, dan kemitraan. Sejak 2024 saya juga menyusun proposal, RAB, dan LPJ dana hibah ormas bersama Biro Dikmental Pemprov DKI Jakarta. Pekerjaan saya berbasis dokumen, taat aturan, dan diukur dengan KPI.</p>
+    <div class="meta"><span>Jakarta Pusat</span><span>Indonesia &amp; Inggris</span><span>Lulusan Manajemen BINUS</span></div>
+  </div>
+
+  <section id="capaian">
+    <header>
+      <span class="label">Lampiran A</span>
+      <h2>Capaian H1 2026</h2>
+    </header>
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="label">Rekap kinerja · INSIST</span>
+        <span class="label">Periode Jan–Jun 2026</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><span class="num">74</span><span class="what">permintaan dukungan sales terpenuhi</span><span class="note">realisasi <b>100%</b></span></div>
+        <div class="kpi"><span class="num">41</span><span class="what">posting Instagram &amp; LinkedIn</span><span class="note">Q2 2026 · <b>171%</b> dari target</span></div>
+        <div class="kpi"><span class="num">42</span><span class="what">desain: flyer, backdrop, ID card, cover laporan, video animasi</span><span class="note">Canva</span></div>
+        <div class="kpi"><span class="num">25</span><span class="what">registrasi rekanan &amp; dokumen kemitraan</span><span class="note">portal vendor korporasi &amp; BUMN</span></div>
+        <div class="kpi"><span class="num">17</span><span class="what">pekerjaan tender &amp; e-katalog</span><span class="note">INAPROC</span></div>
+        <div class="kpi"><span class="num">16</span><span class="what">training &amp; event customer dikoordinasikan</span><span class="note">bersama asosiasi mitra</span></div>
+        <div class="kpi"><span class="num">24<small>/24</small></span><span class="what">minggu jadwal kerja karyawan terpantau</span><span class="note">kepatuhan <b>100%</b></span></div>
+        <div class="kpi"><span class="num">9</span><span class="what">artikel website INSIST &amp; Alestra</span><span class="note">penulisan konten</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <header>
+      <span class="label">Lampiran B</span>
+      <h2>Pengalaman</h2>
+    </header>
+    <div class="jobs">
+      <article class="job">
+        <div class="job-head">
+          <span class="when now">Des 2023 – sekarang</span>
+          <h3>Human Capital &amp; Administration Specialist</h3>
+          <span class="org">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
+        </div>
+        <div class="track">
+          <h4>Human Capital</h4>
+          <ul class="points">
+            <li>Mengevaluasi dan menyelaraskan KPI seluruh divisi tiap kuartal, serta menganalisis beban kerja agar kapasitas staf optimal tanpa menambah headcount.</li>
+            <li>Menjalankan rekrutmen end-to-end dan onboarding, dari iklan lowongan sampai penyiapan fasilitas kerja. <mark>2 karyawan baru</mark> diterima pada H1 2026.</li>
+            <li>Membangun dan mengelola HCIS (HR Information System) sendiri di Canva, terhubung ke domain perusahaan sebagai database karyawan.</li>
+            <li>Menerbitkan surat pengangkatan, evaluasi probation, dan NDA, serta menyusun dokumen KPI, Job Description, dan SOP.</li>
+            <li>Memvalidasi KPI lintas divisi (<mark>4 validasi</mark> pada H1 2026), merekap kehadiran dan cuti, sertifikasi tenaga ahli, dan perjalanan dinas.</li>
+          </ul>
+          <h4>Administration Support</h4>
+          <ul class="points">
+            <li>Menyiapkan surat penawaran, surat audiensi, dokumen proyek, dan tanda terima untuk instansi pemerintah, BUMN, perbankan, dan korporasi besar.</li>
+            <li>Mengelola akun dan produk tayang e-katalog INAPROC beserta dokumen tender.</li>
+            <li>Mengurus registrasi rekanan, deal registration, NDA, dan pakta integritas.</li>
+            <li>Mengoordinasikan venue, materi cetak, peserta, dan dokumentasi event bersama asosiasi mitra.</li>
+            <li>Merancang dan membangun website korporat INSIST dan Alestra dengan Canva (2025).</li>
+          </ul>
+        </div>
+      </article>
+      <div class="divider"></div>
+      <article class="job">
+        <div class="job-head">
+          <span class="when">Mar 2022 – Mar 2023</span>
+          <h3>Human Resources Management Intern</h3>
+          <span class="org">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
+        </div>
+        <ul class="points">
+          <li>Menjadi kontak utama tim sales untuk logistik dan administrasi seminar dan pelatihan di Jakarta dan Padang.</li>
+          <li>Mengorganisasi dan melacak <mark>lebih dari 100 berkas</mark> data proyek fisik dan digital, serta membuat database kandidat dan staf.</li>
+          <li>Memimpin acara internal 17 Agustus 2022 dan mengelola proyek arsip Operasional Manajemen Jalan Tol Jasa Marga.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="hibah">
+    <header>
+      <span class="label">Lampiran C</span>
+      <h2>Administrasi Hibah Ormas</h2>
+    </header>
+    <div>
+      <ol class="flow" aria-label="Alur pekerjaan dana hibah">
+        <li><b>Proposal &amp; RAB</b>Disesuaikan dengan SK Gubernur DKI</li>
+        <li><b>Verifikasi</b>Data dan legalitas bersama Biro Dikmental</li>
+        <li><b>Pelaksanaan</b>Venue, rundown, undangan, materi acara</li>
+        <li><b>LPJ &amp; Audit</b>Portal E-Hibah dan pendampingan audit</li>
+      </ol>
+      <div class="jobs">
+        <article class="job">
+          <div class="job-head">
+            <span class="when now">Sep 2024 – sekarang</span>
+            <h3>Personal Assistant to Director / Staf Administrasi Strategis</h3>
+            <span class="org">Persatuan Tarbiyah Islamiyah (PERTI) Provinsi DKI Jakarta</span>
+          </div>
+          <ul class="points">
+            <li>Menyusun proposal pencairan dan penyesuaian Rencana Anggaran Biaya (RAB) berdasarkan alokasi dalam SK Gubernur DKI Jakarta.</li>
+            <li>Mengoordinasikan verifikasi data proposal dan kelengkapan legal bersama Biro Dikmental Pemprov DKI Jakarta.</li>
+            <li>Bertanggung jawab atas pelaksanaan kegiatan: survei dan negosiasi venue, rundown, surat undangan, desain dan cetak materi.</li>
+            <li>Menyusun laporan pertanggungjawaban digital di portal E-Hibah dan mendampingi audit keuangan bersama pengurus.</li>
+          </ul>
+        </article>
+        <div class="divider"></div>
+        <article class="job">
+          <div class="job-head">
+            <span class="when now">2026 – sekarang</span>
+            <h3>Konsultan Administrasi Hibah (Freelance)</h3>
+            <span class="org">FOKUS DKI Jakarta</span>
+          </div>
+          <ul class="points">
+            <li>Menyusun LPJ penggunaan dana hibah Pemprov DKI Jakarta (Biro Dikmental) untuk forum diskusi ustazah, termasuk LPJ Talkshow Stunting TA 2026.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <header>
+      <span class="label">Lampiran D</span>
+      <h2>Pendidikan</h2>
+    </header>
+    <div class="edu">
+      <div class="edu-item">
+        <span class="when">2019 – Okt 2023</span>
+        <h3>Bina Nusantara University (BINUS) Alam Sutera</h3>
+        <p>Sarjana Ekonomi (S.E.), Manajemen, peminatan Bisnis dan Organisasi</p>
+        <div class="gpa">
+          <span>IPK <b>3,41</b> / 4,00</span>
+          <span>Predikat <b>High Merit</b></span>
+          <span>Lulus 18 Oktober 2023</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <span class="when">2017 – 2019</span>
+        <h3>SMA Pembangunan Jaya Bintaro</h3>
+        <p>Ilmu Pengetahuan Sosial (IPS), Tangerang Selatan</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="keahlian">
+    <header>
+      <span class="label">Lampiran E</span>
+      <h2>Keahlian</h2>
+    </header>
+    <div class="skills">
+      <div class="skill-row"><h3>Human Capital</h3><div class="tags"><span>Rekrutmen end-to-end</span><span>Onboarding</span><span>Administrasi kepegawaian</span><span>KPI</span><span>Workload analysis</span><span>Job Description</span><span>SOP</span><span>HCIS / HRIS</span></div></div>
+      <div class="skill-row"><h3>Administrasi &amp; kepatuhan</h3><div class="tags"><span>Administrasi tender</span><span>INAPROC</span><span>Registrasi rekanan</span><span>NDA</span><span>Dokumen kemitraan</span><span>Pengarsipan</span></div></div>
+      <div class="skill-row"><h3>Administrasi hibah</h3><div class="tags"><span>Proposal</span><span>RAB</span><span>Portal E-Hibah</span><span>LPJ</span><span>Koordinasi Biro Dikmental</span></div></div>
+      <div class="skill-row"><h3>Desain &amp; digital</h3><div class="tags"><span>Canva (desain &amp; website)</span><span>Microsoft Excel</span><span>Microsoft PowerPoint</span><span>Asana</span><span>Nextcloud</span></div></div>
+      <div class="skill-row"><h3>Bahasa</h3><div class="tags"><span>Indonesia (native)</span><span>Inggris (menengah)</span></div></div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <header>
+      <span class="label">Lampiran F</span>
+      <h2>Kontak</h2>
+    </header>
+    <div class="contacts">
+      <div class="contact">
+        <div><span class="label">Email</span><span class="val">razizakaria1@gmail.com</span></div>
+        <button type="button" id="copy-email" data-copy="razizakaria1@gmail.com">Salin</button>
+      </div>
+      <div class="contact">
+        <div><span class="label">Telepon / WhatsApp</span><span class="val">+62 821-2587-6850</span></div>
+        <button type="button" id="copy-phone" data-copy="+6282125876850">Salin</button>
+      </div>
+      <div class="contact">
+        <div><span class="label">LinkedIn</span><span class="val">mohammad-razi-zakaria-homepage</span></div>
+        <a class="btn" href="https://www.linkedin.com/in/mohammad-razi-zakaria-homepage" target="_blank" rel="noopener">Buka profil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Mohammad Razi Zakaria, S.E. · Jakarta · Diperbarui November 2026</footer>
+</div>
+
+<script>
+document.querySelectorAll("button[data-copy]").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var text = btn.getAttribute("data-copy");
+    var done = function () { btn.textContent = "Tersalin"; setTimeout(function () { btn.textContent = "Salin"; }, 1600); };
+    var fallback = function () {
+      var val = btn.parentElement.querySelector(".val");
+      var range = document.createRange(); range.selectNodeContents(val);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      btn.textContent = "Teks dipilih";
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body>
+</html>
