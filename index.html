@@ -4,360 +4,461 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Portofolio Mohammad Razi Zakaria, S.E. - Human Capital & Administration Specialist, administrasi hibah dan stakeholder pemerintah.">
-<style>html{color-scheme:light}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Razi Zakaria Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: berkas kerja. Kolom kiri sempit untuk label dokumen (mono), kolom kanan untuk isi. Angka KPI ditandai stabilo. */
+/* Layout: panel gelap bersudut membulat. Hero oranye dengan foto duotone, strip organisasi, lalu bagian konten di atas latar hitam. Satu tema gelap yang disengaja. */
 :root {
-  --paper: #f2f4f6;
-  --sheet: #ffffff;
-  --ink: #15233b;
-  --ink-soft: #4a5872;
-  --rule: #d5dbe3;
-  --accent: #1d4ed8;
-  --marker: #fde68a;
-  --marker-ink: #15233b;
-  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
-  --s1: .8125rem; --s2: .9375rem; --s3: 1.0625rem; --s4: 1.375rem; --s5: 2rem; --s6: clamp(2.5rem, 7vw, 4.75rem);
+  --bg: #0c0c0d;
+  --panel: #161617;
+  --panel-2: #1f1f21;
+  --line: #2b2b2e;
+  --fg: #f5f3f0;
+  --muted: #9a9693;
+  --orange: #ff5a1f;
+  --orange-2: #ff8a3d;
+  --ember: #7a1d08;
+  --sans: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --radius: 28px;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0e1522; --sheet: #151f30; --ink: #e6ebf2; --ink-soft: #a3afc2; --rule: #2a3750;
-    --accent: #8fb0ff; --marker: #6b5a17; --marker-ink: #fff6d6; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #0e1522; --sheet: #151f30; --ink: #e6ebf2; --ink-soft: #a3afc2; --rule: #2a3750;
-  --accent: #8fb0ff; --marker: #6b5a17; --marker-ink: #fff6d6; color-scheme: dark;
-}
-
 * { box-sizing: border-box; }
+html { background: var(--bg); }
 body {
-  background: var(--paper); color: var(--ink);
-  font-family: var(--body); font-size: var(--s3); line-height: 1.6;
+  background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 1rem; line-height: 1.6;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 0 4rem;
+  padding-block: 16px 3rem;
 }
-.wrap { max-width: 68rem; margin: 0 auto; }
-a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+.page { max-width: 76rem; margin: 0 auto; display: grid; gap: 0; }
+h1, h2, h3 { margin: 0; line-height: 1.05; letter-spacing: -.025em; text-wrap: balance; font-weight: 800; }
 p { margin: 0; }
-.label {
-  font-family: var(--mono); font-size: var(--s1); letter-spacing: .06em; text-transform: uppercase;
-  color: var(--ink-soft);
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--orange-2); outline-offset: 3px; border-radius: 999px; }
+.eyebrow { color: var(--orange); font-weight: 600; font-size: 1.05rem; }
+.tag { font-family: var(--mono); font-size: .78rem; color: var(--orange); }
+
+/* Pill button */
+.pill {
+  display: inline-flex; align-items: center; gap: .75rem; padding: .35rem .35rem .35rem 1.1rem;
+  border-radius: 999px; background: var(--fg); color: #111; font-weight: 600; font-size: .9rem;
+  text-decoration: none; border: 0; cursor: pointer; white-space: nowrap;
+  transition: transform .2s ease;
 }
-mark { background: linear-gradient(transparent 55%, var(--marker) 55%); color: inherit; padding: 0 .1em; }
+.pill i { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--orange); color: #fff; font-style: normal; transition: transform .2s ease; }
+.pill:hover i { transform: rotate(-45deg); }
+.pill.orange { background: var(--orange); color: #fff; }
+.pill.orange i { background: #fff; color: var(--orange); }
 
-/* Header bar */
-.top {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem;
-  padding-block: 1.25rem; border-bottom: 1px solid var(--rule);
+/* HERO */
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 90% at 30% 10%, var(--orange-2) 0%, var(--orange) 38%, #c23209 68%, var(--ember) 100%);
+  min-height: 40rem; display: grid; grid-template-rows: auto 1fr auto;
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3.5vw, 2.5rem);
+  z-index: 2;
 }
-.top nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
-.top nav a { color: var(--ink-soft); text-decoration: none; font-size: var(--s2); }
-.top nav a:hover { color: var(--accent); }
+.hero::after { /* fade into dark at bottom, like the reference */
+  content: ""; position: absolute; inset: auto 0 0 0; height: 45%; z-index: -1;
+  background: linear-gradient(to bottom, transparent, rgba(12,12,13,.85));
+}
+.hero-photo {
+  position: absolute; z-index: -2; bottom: 0; left: 50%; transform: translateX(-42%);
+  height: 100%; width: auto; max-width: none;
+  filter: grayscale(1) contrast(1.35) brightness(1.05);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand { font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; }
+.brand span { opacity: .65; font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: .25rem 1.75rem; flex-wrap: wrap; font-size: .9rem; }
+.nav-links a { text-decoration: none; opacity: .9; }
+.nav-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
 
-/* Hero */
-.hero { display: grid; gap: 1.75rem; padding-block: clamp(2.5rem, 7vw, 5rem) 2.5rem; }
-.hero h1 { font-size: var(--s6); font-weight: 800; letter-spacing: -.02em; }
-.hero h1 .deg { font-weight: 500; color: var(--ink-soft); font-size: .45em; letter-spacing: 0; vertical-align: .55em; margin-left: .2em; }
-.role { font-family: var(--display); font-size: var(--s4); font-weight: 500; color: var(--ink-soft); max-width: 40ch; }
-.role strong { color: var(--ink); font-weight: 700; }
-.lede { max-width: 62ch; }
-.meta { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; font-size: var(--s2); color: var(--ink-soft); }
-.meta span::before { content: "→ "; color: var(--accent); }
+.hero-body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: 2rem; padding-block: 3rem 2rem; }
+.hello { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; margin-bottom: .75rem; }
+.hero h1 { font-size: clamp(3rem, 8.5vw, 6.6rem); text-shadow: 0 2px 30px rgba(80,15,0,.25); }
+.hero-side { justify-self: end; max-width: 19rem; display: grid; gap: .75rem; }
+.hero-side h2 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 700; letter-spacing: -.015em; line-height: 1.2; }
+.hero-side p { font-size: .9rem; color: rgba(255,245,238,.78); }
 
-/* Section scaffold */
-section { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1rem 2.5rem; padding-block: 3rem; border-top: 1px solid var(--rule); }
-section > header { display: grid; gap: .4rem; align-content: start; }
-section > header h2 { font-size: var(--s5); font-weight: 700; }
-@media (max-width: 760px) { section { grid-template-columns: minmax(0, 1fr); padding-block: 2.25rem; } }
+.services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.services div { display: grid; gap: .15rem; font-size: .92rem; }
+.services b { font-family: var(--mono); font-size: .78rem; font-weight: 500; }
+.services b::before { content: "#"; color: var(--orange-2); }
 
-/* KPI sheet */
-.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-.sheet-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding: .75rem 1.25rem; border-bottom: 1px solid var(--rule); }
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); }
-.kpi { padding: 1.25rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; display: grid; gap: .35rem; align-content: start; }
-.kpi .num { font-family: var(--display); font-weight: 800; font-size: 2.5rem; line-height: 1; font-variant-numeric: tabular-nums; }
-.kpi .num small { font-size: .45em; font-weight: 600; color: var(--ink-soft); margin-left: .15em; }
-.kpi .what { font-size: var(--s2); }
-.kpi .note { font-family: var(--mono); font-size: var(--s1); color: var(--ink-soft); }
-.kpi .note b { background: var(--marker); color: var(--marker-ink); font-weight: 500; padding: 0 .3em; border-radius: 2px; }
+/* Org strip, tucked under the hero */
+.strip {
+  margin-top: -3rem; padding: 4.5rem clamp(1.25rem, 3.5vw, 2.5rem) 2.25rem;
+  background: var(--panel); border-radius: 0 0 var(--radius) var(--radius);
+  display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: center;
+}
+.strip p { font-size: .8rem; font-weight: 600; line-height: 1.35; color: var(--muted); }
+.orgs { display: flex; flex-wrap: wrap; gap: 1rem 2.25rem; align-items: center; }
+.org { display: inline-flex; align-items: center; gap: .55rem; font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; color: #dcd8d4; }
+.org svg { width: 1.3rem; height: 1.3rem; flex: none; }
+
+/* Sections */
+.block { padding-block: clamp(3.5rem, 8vw, 6rem) 0; display: grid; gap: 2.5rem; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 4rem; align-items: start; }
+.split h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-top: .5rem; }
+.lead { font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 600; line-height: 1.4; letter-spacing: -.01em; }
+.lead-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; }
+.lead-foot span { color: var(--muted); font-size: .85rem; max-width: 18rem; }
+
+/* Three tiles (stand-ins for the image row): photo + two big results */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.tile { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; background: var(--panel-2); }
+.tile.photo { background: #e9e9e9; }
+.tile.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.1); display: block; }
+.tile.stat { display: grid; align-content: space-between; padding: 1.5rem; background: linear-gradient(160deg, #262628, #121213); }
+.tile.stat.hot { background: linear-gradient(160deg, var(--orange-2), var(--orange) 45%, #a52a07); }
+.tile .big { font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; letter-spacing: -.04em; line-height: .9; font-variant-numeric: tabular-nums; }
+.tile .big small { font-size: .4em; letter-spacing: 0; }
+.tile .cap { font-weight: 600; font-size: 1.05rem; line-height: 1.3; max-width: 16rem; }
+.tile .src { font-family: var(--mono); font-size: .75rem; opacity: .75; }
+.tile figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(12,12,13,.75); backdrop-filter: blur(6px); padding: .4rem .8rem; border-radius: 999px; font-size: .8rem; font-weight: 600; }
+
+/* KPI row */
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.kpi { padding: 1.5rem 1.25rem 1.5rem 0; border-bottom: 1px solid var(--line); display: grid; gap: .3rem; }
+.kpi + .kpi { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+.kpi:nth-child(4n+1) { padding-left: 0; border-left: 0; }
+.kpi .n { font-size: 2.4rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.kpi .n em { font-style: normal; color: var(--orange); font-size: .5em; margin-left: .2em; }
+.kpi .t { color: var(--muted); font-size: .88rem; }
 
 /* Experience */
-.jobs { display: grid; gap: 2.5rem; }
-.job { display: grid; gap: .9rem; }
-.job-head { display: grid; gap: .2rem; }
-.job-head h3 { font-size: var(--s4); font-weight: 700; }
-.org { font-weight: 600; }
-.when { font-family: var(--mono); font-size: var(--s1); color: var(--ink-soft); }
-.when.now { color: var(--accent); }
-.track { display: grid; gap: .5rem; }
-.track h4 { margin: .5rem 0 0; font-family: var(--mono); font-size: var(--s1); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
-ul.points { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; max-width: 70ch; }
-ul.points li { position: relative; padding-left: 1.25rem; font-size: var(--s2); }
-ul.points li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: 1px; background: var(--ink-soft); }
-.divider { height: 1px; background: var(--rule); }
+.jobs { display: grid; gap: 1rem; }
+.job { background: var(--panel); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.25rem); display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.25rem 2.5rem; }
+.job-meta { display: grid; gap: .5rem; align-content: start; }
+.when { display: inline-flex; width: fit-content; align-items: center; gap: .45rem; font-family: var(--mono); font-size: .75rem; padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.when.now { color: #fff; border-color: transparent; background: rgba(255,90,31,.18); }
+.when.now::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--orange); }
+.job h3 { font-size: 1.4rem; letter-spacing: -.02em; line-height: 1.2; }
+.job .where { color: var(--muted); font-size: .9rem; }
+.job-body { display: grid; gap: 1rem; min-width: 0; }
+.job-body h4 { margin: 0; font-family: var(--mono); font-size: .75rem; font-weight: 500; color: var(--orange); letter-spacing: .04em; text-transform: uppercase; }
+ul.pts { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+ul.pts li { position: relative; padding-left: 1.35rem; color: #d6d2ce; font-size: .95rem; }
+ul.pts li::before { content: "→"; position: absolute; left: 0; color: var(--orange); }
+ul.pts b { color: var(--fg); }
 
-/* Grant workflow */
-.flow { list-style: none; margin: 0 0 1.75rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .5rem; counter-reset: step; }
-.flow li { counter-increment: step; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: .85rem 1rem; display: grid; gap: .25rem; font-size: var(--s2); }
-.flow li::before { content: "Tahap " counter(step); font-family: var(--mono); font-size: var(--s1); color: var(--accent); }
-.flow li b { font-family: var(--display); font-size: var(--s3); }
+/* Grant flow */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; counter-reset: s; }
+.flow li { counter-increment: s; background: var(--panel); border-radius: 22px; padding: 1.5rem; display: grid; gap: .5rem; align-content: start; }
+.flow li::before { content: "Tahap 0" counter(s); font-family: var(--mono); font-size: .75rem; color: var(--orange); }
+.flow b { font-size: 1.15rem; letter-spacing: -.01em; }
+.flow span { color: var(--muted); font-size: .9rem; }
 
-/* Education */
-.edu { display: grid; gap: 1.75rem; }
-.edu-item { display: grid; gap: .25rem; }
-.edu-item h3 { font-size: var(--s4); font-weight: 700; }
-.gpa { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: .4rem; font-size: var(--s2); }
-.gpa span b { font-family: var(--display); font-size: var(--s4); }
-
-/* Skills */
-.skills { display: grid; gap: 1.5rem; }
-.skill-row { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: .5rem 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
-.skill-row:last-child { border-bottom: 0; padding-bottom: 0; }
-.skill-row h3 { font-size: var(--s3); font-weight: 700; }
-.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-.tags span { font-size: var(--s1); padding: .2rem .6rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--sheet); }
-@media (max-width: 560px) { .skill-row { grid-template-columns: minmax(0, 1fr); } }
+/* Education + skills */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+.card { background: var(--panel); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.25rem); display: grid; gap: 1.5rem; align-content: start; }
+.card h3 { font-size: 1.6rem; }
+.edu { display: grid; gap: .35rem; }
+.edu strong { font-size: 1.1rem; }
+.edu p { color: var(--muted); font-size: .92rem; }
+.edu-stats { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.chip { font-size: .8rem; padding: .35rem .8rem; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); }
+.chip.o { background: rgba(255,90,31,.15); border-color: rgba(255,90,31,.35); color: #ffd3c0; }
+.skill { display: grid; gap: .6rem; }
+.skill h4 { margin: 0; font-size: .95rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
 
 /* Contact */
-.contacts { display: grid; gap: .75rem; }
-.contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding: 1rem 1.25rem; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; }
-.contact > div { display: grid; gap: .1rem; min-width: 0; }
-.contact .val { font-family: var(--display); font-size: var(--s4); font-weight: 600; user-select: all; overflow-wrap: anywhere; }
-.contact button, .contact a.btn {
-  font: 500 var(--s2) var(--body); color: var(--ink); background: transparent; cursor: pointer;
-  border: 1px solid var(--ink); border-radius: 3px; padding: .45rem .9rem; text-decoration: none;
+.contact {
+  position: relative; overflow: hidden; isolation: isolate; border-radius: var(--radius);
+  background: radial-gradient(110% 140% at 85% 0%, var(--orange-2), var(--orange) 40%, #a52a07 75%, var(--ember));
+  padding: clamp(2rem, 5vw, 3.5rem); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: end;
 }
-.contact button:hover, .contact a.btn:hover { background: var(--ink); color: var(--sheet); }
-footer { padding-top: 2rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: var(--s1); font-family: var(--mono); }
+.contact h2 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+.contact p.sub { margin-top: 1rem; color: rgba(255,245,238,.85); max-width: 32ch; }
+.lines { display: grid; gap: .6rem; }
+.line { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; background: rgba(12,12,13,.35); backdrop-filter: blur(4px); border-radius: 18px; padding: .8rem .8rem .8rem 1.1rem; }
+.line > div { display: grid; min-width: 0; }
+.line small { font-family: var(--mono); font-size: .7rem; opacity: .75; }
+.line span { font-weight: 700; overflow-wrap: anywhere; user-select: all; }
+.line .pill { padding: .45rem 1rem; }
+footer { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 2rem; color: var(--muted); font-size: .8rem; }
 
+@media (max-width: 900px) {
+  .hero { min-height: 44rem; }
+  .hero-body { grid-template-columns: minmax(0, 1fr); align-content: end; padding-block: 2rem 1.5rem; }
+  .hero-side { justify-self: start; }
+  .hero-photo { transform: translateX(-30%); opacity: .9; }
+  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split, .two, .contact { grid-template-columns: minmax(0, 1fr); }
+  .job { grid-template-columns: minmax(0, 1fr); }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi:nth-child(4n+1) { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+  .kpi:nth-child(2n+1) { padding-left: 0; border-left: 0; }
+  .strip { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.pill) { display: none; }
+  .hero-photo { left: auto; right: -18%; transform: none; height: 72%; }
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .tile { aspect-ratio: 5 / 4; }
+  .tile.photo { aspect-ratio: 4 / 5; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+}
 @media (prefers-reduced-motion: no-preference) {
-  .hero > * { animation: rise .5s ease-out both; }
-  .hero > *:nth-child(2) { animation-delay: .06s; }
-  .hero > *:nth-child(3) { animation-delay: .12s; }
-  .hero > *:nth-child(4) { animation-delay: .18s; }
-  @keyframes rise { from { transform: translateY(8px); } to { transform: none; } }
+  .hero h1, .hello, .hero-side, .services { animation: up .7s cubic-bezier(.2,.7,.2,1) both; }
+  .hello { animation-delay: .05s; } .hero h1 { animation-delay: .12s; } .hero-side { animation-delay: .22s; } .services { animation-delay: .3s; }
+  .hero-photo { animation: photo 1.1s ease-out both; }
+  @keyframes up { from { transform: translateY(14px); } to { transform: none; } }
+  @keyframes photo { from { transform: translateX(-42%) scale(1.04); } to { transform: translateX(-42%) scale(1); } }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+  @keyframes photo { from { opacity: .6; } to { opacity: .9; } }
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <span class="label">Portofolio · Mohammad Razi Zakaria</span>
-    <nav aria-label="Navigasi bagian">
-      <a href="#capaian">Capaian</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#hibah">Hibah</a>
-      <a href="#pendidikan">Pendidikan</a>
-      <a href="#keahlian">Keahlian</a>
-      <a href="#kontak">Kontak</a>
+<div class="page">
+  <header class="hero" id="beranda">
+    <img class="hero-photo" src="foto-razi.jpg" alt="Foto Mohammad Razi Zakaria mengenakan jas hitam">
+    <nav class="nav" aria-label="Navigasi utama">
+      <span class="brand">Razi Zakaria<span>, S.E.</span></span>
+      <div class="nav-links">
+        <a href="#tentang">Tentang</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#hibah">Hibah</a>
+        <a href="#keahlian">Keahlian</a>
+        <a class="pill" href="#kontak">Hubungi saya <i aria-hidden="true">→</i></a>
+      </div>
     </nav>
+    <div class="hero-body">
+      <div>
+        <p class="hello">Halo, saya Mohammad Razi Zakaria</p>
+        <h1>Human Capital Specialist</h1>
+      </div>
+      <div class="hero-side">
+        <h2>Dokumen rapi, proses lancar, hasil terukur.</h2>
+        <p>Dari rekrutmen sampai LPJ dana hibah, saya mengurus administrasi yang membuat organisasi berjalan dengan tertib.</p>
+      </div>
+    </div>
+    <div class="services">
+      <div><b>01</b>Human Capital &amp; KPI</div>
+      <div><b>02</b>Administrasi Tender &amp; Kemitraan</div>
+      <div><b>03</b>Administrasi Hibah Pemerintah</div>
+      <div><b>04</b>Desain &amp; Konten Digital</div>
+    </div>
+  </header>
+
+  <div class="strip">
+    <p>Organisasi tempat saya bekerja dan berkoordinasi</p>
+    <div class="orgs">
+      <span class="org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="8.5"/></svg>INSIST</span>
+      <span class="org"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16l-8 9 8 9H4l8-9z"/></svg>Alestra</span>
+      <span class="org"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20V2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>PERTI DKI Jakarta</span>
+      <span class="org"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="8.5" cy="12" r="6.5"/><circle cx="15.5" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>FOKUS DKI</span>
+      <span class="org"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="4" opacity=".5"/></svg>Biro Dikmental DKI</span>
+    </div>
   </div>
 
-  <div class="hero">
-    <h1>Mohammad Razi Zakaria<span class="deg">S.E.</span></h1>
-    <p class="role"><strong>Human Capital &amp; Administration Specialist.</strong> Administrasi hibah dan koordinasi stakeholder pemerintah.</p>
-    <p class="lede">Sejak 2022 saya bekerja di PT Inovasi Sistem Teknologi (INSIST) dan memegang dua fungsi sekaligus: siklus HR dari rekrutmen sampai evaluasi KPI, serta administrasi sales, tender, dan kemitraan. Sejak 2024 saya juga menyusun proposal, RAB, dan LPJ dana hibah ormas bersama Biro Dikmental Pemprov DKI Jakarta. Pekerjaan saya berbasis dokumen, taat aturan, dan diukur dengan KPI.</p>
-    <div class="meta"><span>Jakarta Pusat</span><span>Indonesia &amp; Inggris</span><span>Lulusan Manajemen BINUS</span></div>
-  </div>
-
-  <section id="capaian">
-    <header>
-      <span class="label">Lampiran A</span>
-      <h2>Capaian H1 2026</h2>
-    </header>
-    <div class="sheet">
-      <div class="sheet-head">
-        <span class="label">Rekap kinerja · INSIST</span>
-        <span class="label">Periode Jan–Jun 2026</span>
+  <section class="block" id="tentang">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Di balik pekerjaan saya</p>
+        <h2>Membuat urusan administrasi jadi lebih sederhana</h2>
       </div>
-      <div class="kpis">
-        <div class="kpi"><span class="num">74</span><span class="what">permintaan dukungan sales terpenuhi</span><span class="note">realisasi <b>100%</b></span></div>
-        <div class="kpi"><span class="num">41</span><span class="what">posting Instagram &amp; LinkedIn</span><span class="note">Q2 2026 · <b>171%</b> dari target</span></div>
-        <div class="kpi"><span class="num">42</span><span class="what">desain: flyer, backdrop, ID card, cover laporan, video animasi</span><span class="note">Canva</span></div>
-        <div class="kpi"><span class="num">25</span><span class="what">registrasi rekanan &amp; dokumen kemitraan</span><span class="note">portal vendor korporasi &amp; BUMN</span></div>
-        <div class="kpi"><span class="num">17</span><span class="what">pekerjaan tender &amp; e-katalog</span><span class="note">INAPROC</span></div>
-        <div class="kpi"><span class="num">16</span><span class="what">training &amp; event customer dikoordinasikan</span><span class="note">bersama asosiasi mitra</span></div>
-        <div class="kpi"><span class="num">24<small>/24</small></span><span class="what">minggu jadwal kerja karyawan terpantau</span><span class="note">kepatuhan <b>100%</b></span></div>
-        <div class="kpi"><span class="num">9</span><span class="what">artikel website INSIST &amp; Alestra</span><span class="note">penulisan konten</span></div>
+      <div>
+        <p class="lead">Spesialis Human Capital dan administrasi korporat di PT Inovasi Sistem Teknologi (INSIST) sejak 2022. Saya memegang siklus HR dari awal sampai akhir sekaligus administrasi sales, tender, dan kemitraan.</p>
+        <div class="lead-foot">
+          <span>Sejak 2024 juga menyusun proposal, RAB, dan LPJ dana hibah bersama Pemprov DKI Jakarta.</span>
+          <a class="pill orange" href="#kontak">Hubungi saya <i aria-hidden="true">→</i></a>
+        </div>
       </div>
+    </div>
+    <div class="tiles">
+      <figure class="tile photo" style="margin:0">
+        <img src="foto-razi.jpg" alt="Potret Mohammad Razi Zakaria">
+        <figcaption>Jakarta Pusat</figcaption>
+      </figure>
+      <div class="tile stat hot">
+        <span class="src">INSIST · H1 2026</span>
+        <div>
+          <div class="big">74</div>
+          <p class="cap">permintaan dukungan sales terpenuhi, realisasi 100%</p>
+        </div>
+      </div>
+      <div class="tile stat">
+        <span class="src">Media sosial · Q2 2026</span>
+        <div>
+          <div class="big">171<small>%</small></div>
+          <p class="cap">dari target posting Instagram &amp; LinkedIn (41 posting)</p>
+        </div>
+      </div>
+    </div>
+    <div class="kpis" aria-label="Capaian H1 2026">
+      <div class="kpi"><span class="n">42</span><span class="t">desain: flyer, backdrop, ID card, video animasi</span></div>
+      <div class="kpi"><span class="n">25</span><span class="t">registrasi rekanan &amp; dokumen kemitraan</span></div>
+      <div class="kpi"><span class="n">17</span><span class="t">pekerjaan tender &amp; e-katalog INAPROC</span></div>
+      <div class="kpi"><span class="n">24<em>/24</em></span><span class="t">minggu jadwal kerja karyawan terpantau</span></div>
     </div>
   </section>
 
-  <section id="pengalaman">
-    <header>
-      <span class="label">Lampiran B</span>
-      <h2>Pengalaman</h2>
-    </header>
+  <section class="block" id="pengalaman">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Pengalaman</p>
+        <h2>Empat tahun di dua sisi pekerjaan</h2>
+      </div>
+      <p class="lead">Di kantor saya mengurus orang dan dokumen perusahaan. Di luar kantor saya mengurus administrasi hibah ormas bersama pemerintah provinsi.</p>
+    </div>
     <div class="jobs">
       <article class="job">
-        <div class="job-head">
+        <div class="job-meta">
           <span class="when now">Des 2023 – sekarang</span>
           <h3>Human Capital &amp; Administration Specialist</h3>
-          <span class="org">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
+          <span class="where">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
         </div>
-        <div class="track">
+        <div class="job-body">
           <h4>Human Capital</h4>
-          <ul class="points">
-            <li>Mengevaluasi dan menyelaraskan KPI seluruh divisi tiap kuartal, serta menganalisis beban kerja agar kapasitas staf optimal tanpa menambah headcount.</li>
-            <li>Menjalankan rekrutmen end-to-end dan onboarding, dari iklan lowongan sampai penyiapan fasilitas kerja. <mark>2 karyawan baru</mark> diterima pada H1 2026.</li>
-            <li>Membangun dan mengelola HCIS (HR Information System) sendiri di Canva, terhubung ke domain perusahaan sebagai database karyawan.</li>
-            <li>Menerbitkan surat pengangkatan, evaluasi probation, dan NDA, serta menyusun dokumen KPI, Job Description, dan SOP.</li>
-            <li>Memvalidasi KPI lintas divisi (<mark>4 validasi</mark> pada H1 2026), merekap kehadiran dan cuti, sertifikasi tenaga ahli, dan perjalanan dinas.</li>
+          <ul class="pts">
+            <li>Mengevaluasi KPI seluruh divisi tiap kuartal dan menganalisis beban kerja untuk menekan kebutuhan headcount baru.</li>
+            <li>Rekrutmen end-to-end dan onboarding, <b>2 karyawan baru</b> pada H1 2026.</li>
+            <li>Membangun HCIS (HR Information System) sendiri di Canva, terhubung ke domain perusahaan.</li>
+            <li>Menerbitkan surat pengangkatan, evaluasi probation, dan NDA, serta menyusun KPI, Job Description, dan SOP.</li>
+            <li>Memvalidasi KPI lintas divisi (<b>4 validasi</b>), merekap kehadiran, cuti, sertifikasi tenaga ahli, dan perjalanan dinas.</li>
           </ul>
           <h4>Administration Support</h4>
-          <ul class="points">
-            <li>Menyiapkan surat penawaran, surat audiensi, dokumen proyek, dan tanda terima untuk instansi pemerintah, BUMN, perbankan, dan korporasi besar.</li>
-            <li>Mengelola akun dan produk tayang e-katalog INAPROC beserta dokumen tender.</li>
-            <li>Mengurus registrasi rekanan, deal registration, NDA, dan pakta integritas.</li>
-            <li>Mengoordinasikan venue, materi cetak, peserta, dan dokumentasi event bersama asosiasi mitra.</li>
-            <li>Merancang dan membangun website korporat INSIST dan Alestra dengan Canva (2025).</li>
+          <ul class="pts">
+            <li>Surat penawaran, audiensi, dan dokumen proyek untuk instansi pemerintah, BUMN, perbankan, dan korporasi besar.</li>
+            <li>Administrasi tender dan e-katalog INAPROC, registrasi rekanan, deal registration, dan pakta integritas.</li>
+            <li>Koordinasi <b>16 training dan event customer</b> bersama asosiasi mitra.</li>
+            <li>Menulis <b>9 artikel</b> dan membangun website korporat INSIST dan Alestra dengan Canva (2025).</li>
           </ul>
         </div>
       </article>
-      <div class="divider"></div>
       <article class="job">
-        <div class="job-head">
+        <div class="job-meta">
           <span class="when">Mar 2022 – Mar 2023</span>
           <h3>Human Resources Management Intern</h3>
-          <span class="org">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
+          <span class="where">PT Inovasi Sistem Teknologi (INSIST), Jakarta</span>
         </div>
-        <ul class="points">
-          <li>Menjadi kontak utama tim sales untuk logistik dan administrasi seminar dan pelatihan di Jakarta dan Padang.</li>
-          <li>Mengorganisasi dan melacak <mark>lebih dari 100 berkas</mark> data proyek fisik dan digital, serta membuat database kandidat dan staf.</li>
-          <li>Memimpin acara internal 17 Agustus 2022 dan mengelola proyek arsip Operasional Manajemen Jalan Tol Jasa Marga.</li>
-        </ul>
+        <div class="job-body">
+          <ul class="pts">
+            <li>Kontak utama tim sales untuk logistik seminar dan pelatihan di Jakarta dan Padang.</li>
+            <li>Mengelola <b>lebih dari 100 berkas</b> data proyek fisik dan digital, serta membangun database kandidat dan staf.</li>
+            <li>Memimpin acara internal 17 Agustus 2022 dan proyek arsip Operasional Manajemen Jalan Tol Jasa Marga.</li>
+          </ul>
+        </div>
       </article>
     </div>
   </section>
 
-  <section id="hibah">
-    <header>
-      <span class="label">Lampiran C</span>
-      <h2>Administrasi Hibah Ormas</h2>
-    </header>
-    <div>
-      <ol class="flow" aria-label="Alur pekerjaan dana hibah">
-        <li><b>Proposal &amp; RAB</b>Disesuaikan dengan SK Gubernur DKI</li>
-        <li><b>Verifikasi</b>Data dan legalitas bersama Biro Dikmental</li>
-        <li><b>Pelaksanaan</b>Venue, rundown, undangan, materi acara</li>
-        <li><b>LPJ &amp; Audit</b>Portal E-Hibah dan pendampingan audit</li>
-      </ol>
-      <div class="jobs">
-        <article class="job">
-          <div class="job-head">
-            <span class="when now">Sep 2024 – sekarang</span>
-            <h3>Personal Assistant to Director / Staf Administrasi Strategis</h3>
-            <span class="org">Persatuan Tarbiyah Islamiyah (PERTI) Provinsi DKI Jakarta</span>
-          </div>
-          <ul class="points">
-            <li>Menyusun proposal pencairan dan penyesuaian Rencana Anggaran Biaya (RAB) berdasarkan alokasi dalam SK Gubernur DKI Jakarta.</li>
-            <li>Mengoordinasikan verifikasi data proposal dan kelengkapan legal bersama Biro Dikmental Pemprov DKI Jakarta.</li>
-            <li>Bertanggung jawab atas pelaksanaan kegiatan: survei dan negosiasi venue, rundown, surat undangan, desain dan cetak materi.</li>
-            <li>Menyusun laporan pertanggungjawaban digital di portal E-Hibah dan mendampingi audit keuangan bersama pengurus.</li>
-          </ul>
-        </article>
-        <div class="divider"></div>
-        <article class="job">
-          <div class="job-head">
-            <span class="when now">2026 – sekarang</span>
-            <h3>Konsultan Administrasi Hibah (Freelance)</h3>
-            <span class="org">FOKUS DKI Jakarta</span>
-          </div>
-          <ul class="points">
-            <li>Menyusun LPJ penggunaan dana hibah Pemprov DKI Jakarta (Biro Dikmental) untuk forum diskusi ustazah, termasuk LPJ Talkshow Stunting TA 2026.</li>
-          </ul>
-        </article>
+  <section class="block" id="hibah">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Administrasi hibah ormas</p>
+        <h2>Dari proposal sampai audit</h2>
       </div>
+      <p class="lead">Saya mendampingi ormas mengelola dana hibah Pemprov DKI Jakarta lewat Biro Dikmental, dari pengajuan sampai pertanggungjawaban.</p>
+    </div>
+    <ol class="flow">
+      <li><b>Proposal &amp; RAB</b><span>Disusun sesuai alokasi SK Gubernur DKI Jakarta</span></li>
+      <li><b>Verifikasi</b><span>Data proposal dan kelengkapan legal bersama Biro Dikmental</span></li>
+      <li><b>Pelaksanaan</b><span>Venue, rundown, undangan, desain dan cetak materi</span></li>
+      <li><b>LPJ &amp; Audit</b><span>Pelaporan di portal E-Hibah dan pendampingan audit</span></li>
+    </ol>
+    <div class="jobs">
+      <article class="job">
+        <div class="job-meta">
+          <span class="when now">Sep 2024 – sekarang</span>
+          <h3>Personal Assistant to Director / Staf Administrasi Strategis</h3>
+          <span class="where">Persatuan Tarbiyah Islamiyah (PERTI) Provinsi DKI Jakarta</span>
+        </div>
+        <div class="job-body">
+          <ul class="pts">
+            <li>Menyusun proposal pencairan dan penyesuaian RAB kegiatan.</li>
+            <li>Mengoordinasikan verifikasi data dan administrasi legal dengan Biro Dikmental.</li>
+            <li>Penanggung jawab pelaksanaan kegiatan, termasuk negosiasi venue.</li>
+            <li>Menyusun LPJ digital di portal E-Hibah dan mendampingi audit keuangan.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-meta">
+          <span class="when now">2026 – sekarang</span>
+          <h3>Konsultan Administrasi Hibah (Freelance)</h3>
+          <span class="where">FOKUS DKI Jakarta</span>
+        </div>
+        <div class="job-body">
+          <ul class="pts">
+            <li>Menyusun LPJ penggunaan dana hibah Pemprov DKI Jakarta untuk forum diskusi ustazah, termasuk LPJ Talkshow Stunting TA 2026.</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section id="pendidikan">
-    <header>
-      <span class="label">Lampiran D</span>
-      <h2>Pendidikan</h2>
-    </header>
-    <div class="edu">
-      <div class="edu-item">
-        <span class="when">2019 – Okt 2023</span>
-        <h3>Bina Nusantara University (BINUS) Alam Sutera</h3>
-        <p>Sarjana Ekonomi (S.E.), Manajemen, peminatan Bisnis dan Organisasi</p>
-        <div class="gpa">
-          <span>IPK <b>3,41</b> / 4,00</span>
-          <span>Predikat <b>High Merit</b></span>
-          <span>Lulus 18 Oktober 2023</span>
+  <section class="block" id="keahlian">
+    <div class="two">
+      <div class="card">
+        <p class="eyebrow">Pendidikan</p>
+        <div class="edu">
+          <span class="when">2019 – Okt 2023</span>
+          <strong>Bina Nusantara University (BINUS) Alam Sutera</strong>
+          <p>Sarjana Ekonomi (S.E.), Manajemen, peminatan Bisnis dan Organisasi</p>
+          <div class="edu-stats"><span class="chip o">IPK 3,41 / 4,00</span><span class="chip o">High Merit</span><span class="chip">Lulus 18 Okt 2023</span></div>
+        </div>
+        <div class="edu">
+          <span class="when">2017 – 2019</span>
+          <strong>SMA Pembangunan Jaya Bintaro</strong>
+          <p>Ilmu Pengetahuan Sosial (IPS), Tangerang Selatan</p>
         </div>
       </div>
-      <div class="edu-item">
-        <span class="when">2017 – 2019</span>
-        <h3>SMA Pembangunan Jaya Bintaro</h3>
-        <p>Ilmu Pengetahuan Sosial (IPS), Tangerang Selatan</p>
+      <div class="card">
+        <p class="eyebrow">Keahlian</p>
+        <div class="skill"><h4>Human Capital</h4><div class="chips"><span class="chip">Rekrutmen</span><span class="chip">Onboarding</span><span class="chip">KPI</span><span class="chip">Workload analysis</span><span class="chip">Job Description</span><span class="chip">SOP</span><span class="chip">HCIS / HRIS</span></div></div>
+        <div class="skill"><h4>Administrasi &amp; kepatuhan</h4><div class="chips"><span class="chip">Tender</span><span class="chip">INAPROC</span><span class="chip">Registrasi rekanan</span><span class="chip">NDA</span><span class="chip">Pengarsipan</span></div></div>
+        <div class="skill"><h4>Administrasi hibah</h4><div class="chips"><span class="chip">Proposal</span><span class="chip">RAB</span><span class="chip">E-Hibah</span><span class="chip">LPJ</span></div></div>
+        <div class="skill"><h4>Tools &amp; bahasa</h4><div class="chips"><span class="chip">Canva</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Asana</span><span class="chip">Nextcloud</span><span class="chip o">Indonesia (native)</span><span class="chip o">Inggris (menengah)</span></div></div>
       </div>
     </div>
   </section>
 
-  <section id="keahlian">
-    <header>
-      <span class="label">Lampiran E</span>
-      <h2>Keahlian</h2>
-    </header>
-    <div class="skills">
-      <div class="skill-row"><h3>Human Capital</h3><div class="tags"><span>Rekrutmen end-to-end</span><span>Onboarding</span><span>Administrasi kepegawaian</span><span>KPI</span><span>Workload analysis</span><span>Job Description</span><span>SOP</span><span>HCIS / HRIS</span></div></div>
-      <div class="skill-row"><h3>Administrasi &amp; kepatuhan</h3><div class="tags"><span>Administrasi tender</span><span>INAPROC</span><span>Registrasi rekanan</span><span>NDA</span><span>Dokumen kemitraan</span><span>Pengarsipan</span></div></div>
-      <div class="skill-row"><h3>Administrasi hibah</h3><div class="tags"><span>Proposal</span><span>RAB</span><span>Portal E-Hibah</span><span>LPJ</span><span>Koordinasi Biro Dikmental</span></div></div>
-      <div class="skill-row"><h3>Desain &amp; digital</h3><div class="tags"><span>Canva (desain &amp; website)</span><span>Microsoft Excel</span><span>Microsoft PowerPoint</span><span>Asana</span><span>Nextcloud</span></div></div>
-      <div class="skill-row"><h3>Bahasa</h3><div class="tags"><span>Indonesia (native)</span><span>Inggris (menengah)</span></div></div>
-    </div>
-  </section>
-
-  <section id="kontak">
-    <header>
-      <span class="label">Lampiran F</span>
-      <h2>Kontak</h2>
-    </header>
-    <div class="contacts">
-      <div class="contact">
-        <div><span class="label">Email</span><span class="val">razizakaria1@gmail.com</span></div>
-        <button type="button" id="copy-email" data-copy="razizakaria1@gmail.com">Salin</button>
+  <section class="block" id="kontak">
+    <div class="contact">
+      <div>
+        <h2>Mari bekerja sama.</h2>
+        <p class="sub">Terbuka untuk peran Human Capital, administrasi korporat, dan proyek administrasi hibah.</p>
       </div>
-      <div class="contact">
-        <div><span class="label">Telepon / WhatsApp</span><span class="val">+62 821-2587-6850</span></div>
-        <button type="button" id="copy-phone" data-copy="+6282125876850">Salin</button>
-      </div>
-      <div class="contact">
-        <div><span class="label">LinkedIn</span><span class="val">mohammad-razi-zakaria-homepage</span></div>
-        <a class="btn" href="https://www.linkedin.com/in/mohammad-razi-zakaria-homepage" target="_blank" rel="noopener">Buka profil</a>
+      <div class="lines">
+        <div class="line"><div><small>EMAIL</small><span class="val">razizakaria1@gmail.com</span></div><button class="pill" type="button" id="copy-email" data-copy="razizakaria1@gmail.com">Salin <i aria-hidden="true">⧉</i></button></div>
+        <div class="line"><div><small>WHATSAPP</small><span class="val">+62 821-2587-6850</span></div><button class="pill" type="button" id="copy-phone" data-copy="+6282125876850">Salin <i aria-hidden="true">⧉</i></button></div>
+        <div class="line"><div><small>LINKEDIN</small><span class="val">mohammad-razi-zakaria-homepage</span></div><a class="pill" href="https://www.linkedin.com/in/mohammad-razi-zakaria-homepage" target="_blank" rel="noopener">Buka <i aria-hidden="true">↗</i></a></div>
       </div>
     </div>
+    <footer><span>© 2026 Mohammad Razi Zakaria, S.E.</span><span>Jakarta, Indonesia</span></footer>
   </section>
-
-  <footer>Mohammad Razi Zakaria, S.E. · Jakarta · Diperbarui November 2026</footer>
 </div>
 
 <script>
 document.querySelectorAll("button[data-copy]").forEach(function (btn) {
+  var label = btn.firstChild;
   btn.addEventListener("click", function () {
     var text = btn.getAttribute("data-copy");
-    var done = function () { btn.textContent = "Tersalin"; setTimeout(function () { btn.textContent = "Salin"; }, 1600); };
+    var done = function () { label.nodeValue = "Tersalin "; setTimeout(function () { label.nodeValue = "Salin "; }, 1600); };
     var fallback = function () {
       var val = btn.parentElement.querySelector(".val");
-      var range = document.createRange(); range.selectNodeContents(val);
-      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
-      btn.textContent = "Teks dipilih";
+      var r = document.createRange(); r.selectNodeContents(val);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      label.nodeValue = "Dipilih ";
     };
-    try {
-      navigator.clipboard.writeText(text).then(done, fallback);
-    } catch (e) { fallback(); }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
   });
 });
 </script>
